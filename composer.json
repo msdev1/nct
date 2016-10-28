@@ -1,7 +1,7 @@
 {
     "name": "msdev1/nct",
     "description": "Dynamic Website",
-    "keywords": " ",
+    "keywords": [],
     "license": "MIT",
     "type": "project",
     "require": {
