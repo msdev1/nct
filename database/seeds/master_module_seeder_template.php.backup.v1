@@ -1,0 +1,501 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class master_module_seeder_template extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+
+        $website=[
+          'News'=>[
+                    'Title'=>'News',
+                    'HasSub'=>'1',
+                    'AC'=>'0',
+                    'SubArray'=>[
+                                  [
+                                    'Title'=>'Add',
+                                    'HasSub'=>'0',
+                                    'AC'=>'0',
+                                    'SubLink'=>'wb/news/add',
+                                  ],
+                                  [
+                                    'Title'=>'Edit',
+                                    'HasSub'=>'0',
+                                    'AC'=>'0',
+                                    'SubLink'=>'wb/news/edit',
+                                  ],
+                                  [
+                                    'Title'=>'Schedule',
+                                    'HasSub'=>'0',
+                                    'AC'=>'0',
+                                    'SubLink'=>'wb/news/schedule',
+                                  ],
+                                  [
+                                    'Title'=>'View All',
+                                    'HasSub'=>'0',
+                                    'AC'=>'0',
+                                    'SubLink'=>'wb/news/all',
+                                  ],
+                                ],
+                  ],
+          'Announcements'=>[
+                              'Title'=>'Announcements',
+                              'HasSub'=>'1',
+                              'AC'=>'0',
+                              'SubArray'=>[
+                                            [
+                                              'Title'=>'Add',
+                                              'HasSub'=>'0',
+                                              'SubLink'=>'wb/announcements/add',
+                                            ],
+                                            [
+                                              'Title'=>'Edit',
+                                              'HasSub'=>'0',
+                                              'SubLink'=>'wb/announcements/edit',
+                                            ],
+                                            [
+                                              'Title'=>'Schedule',
+                                              'HasSub'=>'0',
+                                              'SubLink'=>'wb/announcements/schedule',
+                                            ],
+                                            [
+                                              'Title'=>'View All',
+                                              'HasSub'=>'0',
+                                              'SubLink'=>'wb/announcements/all',
+                                            ],
+                                          ],
+                            ],
+          'Milestones'=>[
+                          'Title'=>'Milestones',
+                          'HasSub'=>'1',
+                          'AC'=>'0',
+                          'SubArray'=>[
+                                        [
+                                          'Title'=>'Add',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/milestones/add',
+                                        ],
+                                        [
+                                          'Title'=>'Edit',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/milestones/edit',
+                                        ],
+                                        [
+                                          'Title'=>'Schedule',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/milestones/schedule',
+                                        ],
+                                        [
+                                          'Title'=>'View All',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/milestones/all',
+                                        ],
+                                      ],
+                        ],
+          'Objectives'=>[
+                          'Title'=>'Objectives',
+                          'HasSub'=>'1',
+                          'AC'=>'0',
+                          'SubArray'=>[
+                                        [
+                                          'Title'=>'Add',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/objectives/add',
+                                        ],
+                                        [
+                                          'Title'=>'Edit',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/objectives/edit',
+                                        ],
+                                        [
+                                          'Title'=>'Schedule',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/objectives/schedule',
+                                        ],
+                                        [
+                                          'Title'=>'View All',
+                                          'HasSub'=>'0',
+                                          'AC'=>'0',
+                                          'SubLink'=>'wb/objectives/all',
+                                        ],
+                                      ],
+                        ],
+          'Events'=>[
+                      'Title'=>'Events',
+                      'HasSub'=>'1',
+                      'AC'=>'0',
+                      'SubArray'=>[
+                                    [
+                                      'Title'=>'Add',
+                                      'HasSub'=>'0',
+                                      'AC'=>'0',
+                                      'SubLink'=>'wb/events/add',
+                                    ],
+                                    [
+                                      'Title'=>'Edit',
+                                      'HasSub'=>'0',
+                                      'AC'=>'0',
+                                      'SubLink'=>'wb/events/edit',
+                                    ],
+                                    [
+                                      'Title'=>'Schedule',
+                                      'HasSub'=>'0',
+                                      'AC'=>'0',
+                                      'SubLink'=>'wb/events/schedule',
+                                    ],
+                                    [
+                                      'Title'=>'View All',
+                                      'HasSub'=>'0',
+                                      'AC'=>'0',
+                                      'SubLink'=>'wb/events/all',
+                                    ],
+                                  ],
+                    ],
+
+        ];
+
+
+        $forms=[
+          'Genrate'=>[
+                          'Title'=>'Genrate',
+                          'HasSub'=>'1',
+                          'AC'=>'0',
+                          'SubArray'=>[
+                            [
+                              'Title'=>'New Form',
+                              'HasSub'=>'0',
+                              'AC'=>'0',
+                              'SubLink'=>'fm/genrate/new',
+                            ],
+                            [
+                              'Title'=>'From Template',
+                              'HasSub'=>'0',
+                              'AC'=>'0',
+                              'SubLink'=>'fm/genrate/template',
+                            ],
+
+                          ],
+          ],
+          'Publish'=>[
+              'Title'=>'Publish',
+              'HasSub'=>'1',
+              'AC'=>'0',
+              'SubArray'=>[
+                [
+                  'Title'=>'On Website',
+                  'HasSub'=>'0',
+                  'AC'=>'0',
+                  'SubLink'=>'fm/publish/new',
+                ],
+                [
+                  'Title'=>'Schedule',
+                  'HasSub'=>'0',
+                  'AC'=>'0',
+                  'SubLink'=>'fm/publish/schedule',
+                ],
+                [
+                  'Title'=>'View All',
+                  'HasSub'=>'0',
+                  'AC'=>'0',
+                  'SubLink'=>'fm/publish/all',
+                ],
+              ],
+          ],
+          'Export'=>[
+            'Title'=>'Export',
+            'HasSub'=>'0',
+            'AC'=>'0',
+            'SubLink'=>'fm/export',
+          ],
+
+        ];
+
+        $query=[
+          'View'=>[
+            'Title'=>'View',
+            'HasSub'=>'1',
+            'AC'=>'0',
+            'SubArray'=>[
+              [
+                'Title'=>'Open Query',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'qm/view/open',
+              ],
+              [
+                'Title'=>'Closed Query',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'qm/view/close',
+              ],
+              [
+                'Title'=>'Follow Up Query',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'qm/view/followup',
+              ],
+              [
+                'Title'=>'All',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'qm/view/all',
+              ],
+            ]
+          ],
+          'Schedule'=>[
+            'Title'=>'Schedule',
+            'HasSub'=>'1',
+            'AC'=>'0',
+            'SubArray'=>[
+              [
+                'Title'=>'Query Follow UP',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'qm/schedule/followup'
+              ],
+              [
+                'Title'=>'Query Response',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'qm/schedule/followup'
+              ],
+            ],
+
+          ],
+          'Transfer'=>[
+            'Title'=>'Transfer',
+            'HasSub'=>'1',
+            'AC'=>'0',
+            'SubArray'=>[
+              [
+                'Title'=>'Query',
+                'HasSub'=>'0',
+                'SubLink'=>'qm/transfer/query',
+              ],
+              [
+                'Title'=>'Query Follow Up',
+                'HasSub'=>'0',
+                'SubLink'=>'qm/transfer/followup',
+              ],
+            ],
+            'Assign'=>[
+              'Title'=>'Assign',
+              'HasSub'=>'1',
+              'AC'=>'0',
+              'SubArray'=>[
+                [
+                  'Title'=>'Query',
+                  'HasSub'=>'0',
+                  'SubLink'=>'qm/assign/query',
+                ],
+                [
+                  'Title'=>'Query Follow Up',
+                  'HasSub'=>'0',
+                  'SubLink'=>'qm/assign/followup',
+                ],
+              ],
+          ],
+        ],
+        ];
+
+        $documents=[
+          'Upload'=>[
+            'Title'=>'Upload',
+            'HasSub'=>'1',
+            'AC'=>'0',
+            'SubArray'=>[
+              [
+                'Title'=>'New Document',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/upload/new',
+              ],
+            ],
+          ],
+          'Share'=>[
+            'Title'=>'Share',
+            'HasSub'=>'1',
+            'AC'=>'0',
+            'SubArray'=>[
+              [
+                'Title'=>'With User',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/share/user',
+              ],
+              [
+                'Title'=>'Send Documents',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/upload/send',
+              ],
+              [
+                'Title'=>'Download Document',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/upload/download',
+              ],
+            ],
+          ],
+          'Assign'=>[
+            'Title'=>'Assign',
+            'HasSub'=>'1',
+            'AC'=>'0',
+            'SubArray'=>[
+              [
+                'Title'=>'To News',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/assign/news',
+              ],
+              [
+                'Title'=>'To Announcements',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/assign/announcements',
+              ],
+              [
+                'Title'=>'To Event',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/assign/event',
+              ],
+              [
+                'Title'=>'To Form',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'dm/assign/form',
+              ],
+            ],
+          ],
+        ];
+
+        $user=[
+          'Profile'=>[
+            'Title'=>'Profile',
+            'HasSub'=>'1',
+            'SubArray'=>[
+              [
+                'Title'=>'Details',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'um/profile/details',
+              ],
+              [
+                'Title'=>'Change Password',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubLink'=>'um/profile/password',
+              ],
+            ],
+          ],
+          // 'Settings'=>[],
+          'User Management'=>[
+            'Title'=>'User Management',
+            'HasSub'=>'1',
+            'SubArray'=>[
+              [
+                'Title'=>'Users',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubArray'=>[
+                  [
+                    'Title'=>'Add User',
+                    'HasSub'=>'0',
+                    'AC'=>'0',
+                    'SubLink'=>'um/users/current/new',
+                  ],
+                  [
+                    'Title'=>'Edit User',
+                    'HasSub'=>'0',
+                    'AC'=>'0',
+                    'SubLink'=>'um/users/current/edit',
+                  ],
+                  [
+                    'Title'=>'Assign User to Role',
+                    'HasSub'=>'0',
+                    'AC'=>'0',
+                    'SubLink'=>'um/users/current/assign',
+                  ],
+                ],
+              ],
+              [
+                'Title'=>'Role',
+                'HasSub'=>'0',
+                'AC'=>'0',
+                'SubArray'=>[
+                  [
+                    'Title'=>'Add new Role',
+                    'HasSub'=>'0',
+                    'AC'=>'0',
+                    'SubLink'=>'um/users/role/new',
+                  ],
+                  [
+                    'Title'=>'Edit Role',
+                    'HasSub'=>'0',
+                    'AC'=>'0',
+                    'SubLink'=>'um/users/role/edit',
+                  ],
+                  [
+                    'Title'=>'Assign Role to User',
+                    'HasSub'=>'0',
+                    'AC'=>'0',
+                    'SubLink'=>'um/users/role/assign',
+                  ],
+                ],
+              ],
+            ],
+          ],
+          'Logout'=>[
+            'Title'=>'Logout',
+            'HasSub'=>'0',
+            'SubLink'=>'um/logout',
+          ],
+        ];
+
+        $array=[
+          'Website'=>$website,
+          'Forms'=>$forms,
+          'Query'=>$query,
+          'Documents'=>$documents,
+          'Users'=>$user,
+          ];
+
+          $array2=[
+            'ModuleName'=>'Million Solution',
+            'ModuleCode'=>'Super Admin',
+            'ModuleStructure'=>'mssuperadmin',
+            'ExtraField'=>'',
+            'Status'=>'0',
+          ];
+
+          foreach ($array as $key => $value) {
+            $mod=new \BModel\Module();
+            $array2=$mod->feedMod($key,$value);
+            $mod->feed($array2);
+            $mod->checkSave();
+
+
+          }
+
+
+
+        //  $mod->
+
+
+    }
+}

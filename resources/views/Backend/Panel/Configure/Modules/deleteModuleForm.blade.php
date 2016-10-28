@@ -1,0 +1,1 @@
+<?php $data['form']->moduleAddForm(); ?>

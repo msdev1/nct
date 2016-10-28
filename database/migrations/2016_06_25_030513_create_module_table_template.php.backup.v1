@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateModuleTableTemplate extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+      Schema::create('SuperModule', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('ModuleCode')->unique();
+          $table->string('ModuleName');
+          $table->json('ModuleStructure')->default(json_encode(array(), true));
+          $table->json('ExtraField')->default(json_encode(array(), true));
+          $table->boolean('Status')->default(false);
+          $table->timestamps();
+      });
+
+
+
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+      Schema::drop('SuperModule');
+    }
+}

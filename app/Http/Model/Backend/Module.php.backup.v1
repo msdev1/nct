@@ -1,0 +1,147 @@
+<?php
+
+namespace BModel;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Module extends \BModel\BaseModel
+{
+
+  protected $table = 'SuperModule';
+  protected $connection = 'master';
+  protected $hidden = ['ModuleCode','id'];
+  protected $visible = ['ModuleName', 'ModuleStructure','ExtraField','Status'];
+  protected $casts = ['Status' => 'boolean',];
+  protected $fillable = [
+      'ModuleName', 'ModuleStructure','ExtraField','Status','ModuleCode',
+  ];
+
+  protected $columnMaster=[
+                            'fname'=>'ModuleName',
+                            'lname'=>'ModuleCode',
+                            'un'=>'ModuleStructure',
+                            'extra'=>'ExtraField',
+                            'st'=>'Status',
+                          ];
+
+                          public $formMaster=[
+                            'ModuleName'=>[
+                              'Lable'=>'Module Name',
+                              'Type'=>'text',
+                              'PlaceHolder'=>'Enter Module Name',
+                              'value'=>'',
+                            ],
+                            'ModuleCode'=>[
+                              'Lable'=>'Module Code',
+                              'Type'=>'text',
+                              'PlaceHolder'=>'Enter Module Code',
+                            ],
+                            'ModuleStructure'=>[
+                              'Lable'=>'Module Structure',
+                              'Type'=>'json',
+                              'PlaceHolder'=>'Module Structure',
+                            ],
+                            'ExtraField'=>[
+                              'Lable'=>'ExtraField',
+                              'Type'=>'json',
+                              'PlaceHolder'=>'Auto Genrated',
+                            ],
+                            'Status'=>[
+                              'Lable'=>'User',
+                              'Type'=>'radio',
+                              'Option'=>['Active'=>1,'Deactive'=>0],
+                            ],
+
+                          ];
+                          public $rules=[
+                            'ModuleName'=>'required|string',
+                            'ModuleCode'=>'required|string',
+                            'ModuleStructure'=>'required|json',
+                            'ExtraField'=>'required|json',
+                            'Status'=>'required|boolean|',
+                          ];
+
+                          public $massage=[
+                            'required'=>'Please enter :attribute .',
+                            'string'=>'Please enter valid :attribute .',
+                            'json'=>'Please enter valid json input in :attribute .',
+                            'boolean'=>'Please select valid option in :attribute .',
+                          ];
+
+/*///////////////////////////////////////////////////////
+&=>Only this class function
+*///////////////////////////////////////////////////////
+
+public function nav($ac){
+
+}
+
+public function newModCode(){
+  $mc=str_random(4);
+  while ($this->where('ModuleCode',$mc)->first() == null) {
+  return $mc;
+    }
+    return false;
+
+}
+
+public function feedMod($mod,$modArray){
+
+    $modArrayFinal=[
+      'ModuleCode'=>$this->newModCode(),
+      'ModuleName'=>$mod,
+      'ModuleStructure'=>json_encode($modArray,true),
+      'ExtraField'=>json_encode([],true),
+      'Status'=>'1',
+
+    ];
+    return $modArrayFinal;
+}
+
+public function checkSave()
+  {
+
+      $e=0;
+
+      foreach ($this->columnMaster as $key => $value) {
+      if(array_key_exists($value,$this->attributes)){
+         if($e==0 and $this->attributes[$value] === null){
+            $e=1;
+          }
+        }else{
+          $e=1;
+        }
+      }
+
+      if($e==0){
+        if($this->where('ModuleCode',$this->attributes['ModuleCode'])->first() == null){
+          $this->save();
+        return true;
+        }
+      return false;
+      }else{
+        return false;
+      }
+   }
+
+
+
+
+/*///////////////////////////////////////////////////////
+&=>Comman Please edit befor proper authority
+*///////////////////////////////////////////////////////
+                          public function rules($array=array()){
+                            if($array==null){
+                              $ruleMaster=$this->rules;
+                            }else{
+                              foreach ($array as $value) {
+                                if(array_key_exists($value,$this->rules)){
+                                  $ruleMaster[$value]=$this->rules[$value];
+                                }
+                              }
+                            }
+                            return $ruleMaster;
+                          }
+
+
+}

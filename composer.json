@@ -1,0 +1,63 @@
+{
+    "name": "msdev1/nct",
+    "description": "Dynamic Website",
+    "keywords": " ",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.2.*",
+        "laravelcollective/html": "5.2.*",
+        "maatwebsite/excel": "~2.1.0",
+        "milon/barcode": "^5.2",
+        "barryvdh/laravel-dompdf": "0.6.*"
+
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Backend\\": "app/Http/Controllers/Backend/",
+            "Frontend\\": "app/Http/Controllers/Frontend/",
+            "BModel\\": "app/Http/Model/Backend/",
+            "FModel\\":"app/Http/Model/Frontend/",
+            "MSModel\\":"app/Http/Model/MS/",
+            "MS\\":"app/MS/",
+            "FGate\\":"app/Http/Middleware/Frontend/",
+            "BGate\\":"app/Http/Middleware/Backend/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
